@@ -1,0 +1,33 @@
+<html>
+
+  <script src="https://drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/2.1.4/stamplay.min.js"></script>
+  <script>
+Stamplay.init('myblog44');
+var credentials = {
+  email : "bhargav.gandham44@gmail.com",
+  password : "stamplay_rocks!"
+}
+
+
+
+
+Stamplay.User.login(credentials)
+  .then(function(res) {
+    // success
+    console.log("lo");
+  }, function(err) {console.log("e");
+    // error
+  })
+
+
+
+     // success*/
+/*
+ Stamplay.User.signup(credentials)
+   .then(function(res) {console.log("sup"+res);console.log(localStorage);
+    /*   Stamplay.User.login({email:"b@q.com",password:"123"}).then(function(res){console.log("l"+res);console.log(localStorage);},function(err){console.log(err);});
+Stamplay.user.logout();
+   }, function(err){console.log("e"+err);})*//*
+     // error*/
+  </script>
+</html>

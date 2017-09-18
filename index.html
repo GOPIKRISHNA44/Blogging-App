@@ -1,0 +1,45 @@
+<html ng-app="Blog">
+
+<head>
+  <style >
+  .ng-touched.ng-invalid{border:#ff0000 1px solid !important;}
+  </style>
+
+  <script src="angular.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="app.js"></script>
+  <script src="bower/route/angular-ui-router.min.js"></script>
+  <script src="stamplay-js-sdk-master/dist/stamplay.min.js" type="text/javascript"></script>
+  <link href="bootstrap.min.css" type="text/css" rel="stylesheet"/>
+  <script src="jquery.min.js" type="text/javascript"></script>
+  <script src="bootstrap.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.4/angular-sanitize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ng-toast/2.0.0/ngToast.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/ng-toast/2.0.0/ngToast.css" type="text/css" rel="stylesheet"/>
+<link rel='stylesheet' href='/node_modules/textangular/dist/textAngular.css'>
+<link rel='stylesheet' href='/node_modules/textangular/font-awesome/css/font-awesome.min.css'>
+<script src='/node_modules/textangular/dist/textAngular-rangy.min.js'></script>
+<script src='/node_modules/textangular/dist/textAngular-sanitize.min.js'></script>
+<script src='/node_modules/textangular/dist/textAngular.min.js'></script>
+
+</head>
+<body ng-controller="body">
+    <h1>Hello  world!!</h1>
+
+
+<div ng-include="'structures/menu.html'" ng-controller="menu"></div>
+<div ui-view>
+
+</div>
+</body>
+<div ng-controller="globalposts" ng-if="!select">
+<div class="container col-sm-8" ng-repeat="blog in blogobject">
+  <div class="panel panel-default">
+    <div class="panel-heading">{{blog.title}}</div>
+    <div class="panel-body" ng-bind-html="blog.content|postcontent"></div>
+    <div class="panel-footer"><a href="#readpost/{{blog._id}}" class="btn">Read</a></div>
+    <div ng-if="logged">{{blog.actions.comments.length}}Comments</div>
+    
+</div>
+
+
+</html>

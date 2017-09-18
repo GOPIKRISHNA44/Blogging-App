@@ -1,0 +1,20 @@
+<html>
+<script src="https://drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/2.1.4/stamplay.min.js"></script>
+<input type="email" id="email" />
+<input type="button" onclick="reset()"/>
+<script>
+Stamplay.init("myblog44");
+function reset()
+{
+  var emailAndNewPass = {
+   email: "bhargav.gandham44@gmail.com",
+   newPassword: "stamplay_rocks!"
+ }
+ Stamplay.User.resetPassword(emailAndNewPass)
+   .then(function(res){
+     // success
+   }, function(err) {
+     // error
+   })
+}
+</script>
