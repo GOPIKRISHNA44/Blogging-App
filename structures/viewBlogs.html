@@ -1,0 +1,14 @@
+<toast></toast>
+<h1>Your blogs</h1>
+
+<div class="container col-sm-8" ng-repeat="blog in blogobject">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">{{blog.title}}</div>
+    <div class="panel-body" ng-bind-html="blog.content|postcontent"></div>
+<div class="panel-footer"><a href="#edit/{{blog._id}}" class="btn btn-primary"/>Edit</a>
+<a href="#readpost/{{blog._id}}" class="btn btn-primary"/>Read more</a>
+<p>{{blog.actions.comments.length}} Comments</p>
+</div>
+  </div>
+</div>

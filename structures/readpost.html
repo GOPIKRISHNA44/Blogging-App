@@ -1,0 +1,25 @@
+
+<toast></toast>
+<div class="container col-sm-8" >
+
+  <div class="panel panel-default">
+    <div class="panel-heading">{{post.title}}</div>
+    <div class="panel-body" ng-bind-html="post.content"></div>
+
+  </div>
+</div>
+<div class="container col-sm-4">
+  <p>Write a comment</p>
+  <input type="text" value="" placeholder="Enter your comment" class="form-control" ng-model="comment"/>
+  <br />
+  <input type="button" class="btn btn-primary form-control" value="Post comment" ng-click="postcomment('{{post._id}}')"/>
+
+</div>
+<div class="container col-sm-12">
+  <p ng-repeat="comment in displaydata">
+user:{{comment.data}}
+comment:{{comment.user}}
+
+
+  </p>
+</div>
